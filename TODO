@@ -1,0 +1,16 @@
+--- PAGES / MODULES ---
+
+Dependencies:
+    ☐ Vue Persisted State (save Vuex in LocalStorage)
+Search Users:
+    ☐ Filter Search
+    ☐ List Results + Paginate
+    ☐ Save User (Vuex)
+        ☐ Block Duplicated Users
+(List) Favorites Users:
+    ☐ List Users (Vuex) + Paginate
+    ☐ Filter Search
+    ☐ Delete User
+    ☐ Export to Excel (XLSX)
+Map View:
+    ☐ Show Favorites Users in Map
