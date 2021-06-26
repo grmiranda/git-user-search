@@ -53,12 +53,26 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    'no-param-reassign': 'off',
-    'no-void': 'off',
-    'no-nested-ternary': 'off',
-    'max-classes-per-file': 'off',
-
-    'import/first': 'off',
+    'linebreak-style': 'off',
+    'no-underscore-dangle': 'off',
+    camelcase: 'off',
+    'comma-dangle': ['error', 'only-multiline'],
+    semi: ['error', 'never'],
+    'arrow-parens': ['error', 'as-needed'],
+    'object-curly-newline': ['error', { multiline: true, consistent: true }],
+    'consistent-return': 'off',
+    'no-console': [
+      process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+      {
+        allow: ['warn', 'info', 'error'],
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'prefer-rest-params': 'off',
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'generator-star-spacing': 'off',
+    'one-var': 'error',
+    'import/first': 'error',
     'import/named': 'error',
     'import/namespace': 'error',
     'import/default': 'error',
@@ -66,11 +80,8 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'import/prefer-default-export': 'off',
     'prefer-promise-reject-errors': 'off',
-
-
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   }
 }

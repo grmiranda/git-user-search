@@ -2,6 +2,10 @@
 
 Dependencies:
     ☐ Vue Persisted State (save Vuex in LocalStorage)
+Get Access Token to use GITHUB API:
+    ☐ Ask User to ser Access Token
+    ☐ Add link to step-by-step tutorial
+    ☐ Save Access Token
 Search Users:
     ☐ Filter Search
     ☐ List Results + Paginate

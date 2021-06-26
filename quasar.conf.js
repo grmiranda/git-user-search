@@ -7,12 +7,12 @@
 // https://v2.quasar.dev/quasar-cli/quasar-conf-js
 
 /* eslint-env node */
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin')
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
-const { configure } = require('quasar/wrappers');
+const { configure } = require('quasar/wrappers')
 
-module.exports = configure((ctx) => ({
+module.exports = configure(ctx => ({
   // https://v2.quasar.dev/quasar-cli/supporting-ts
   supportTS: false,
 
@@ -69,7 +69,7 @@ module.exports = configure((ctx) => ({
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
     chainWebpack(chain) {
       chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }]);
+        .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }])
     },
   },
 
@@ -117,7 +117,7 @@ module.exports = configure((ctx) => ({
 
     chainWebpackWebserver(chain) {
       chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+        .use(ESLintPlugin, [{ extensions: ['js'] }])
     },
 
     middlewares: [
@@ -135,7 +135,7 @@ module.exports = configure((ctx) => ({
     // if using workbox in InjectManifest mode
     chainWebpackCustomSW(chain) {
       chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+        .use(ESLintPlugin, [{ extensions: ['js'] }])
     },
 
     manifest: {
@@ -212,13 +212,13 @@ module.exports = configure((ctx) => ({
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
     chainWebpackMain(chain) {
       chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+        .use(ESLintPlugin, [{ extensions: ['js'] }])
     },
 
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
     chainWebpackPreload(chain) {
       chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+        .use(ESLintPlugin, [{ extensions: ['js'] }])
     },
   },
-}));
+}))
