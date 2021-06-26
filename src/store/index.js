@@ -1,5 +1,4 @@
-import { store } from 'quasar/wrappers'
-import { createStore } from 'vuex'
+import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 import { extend } from 'quasar'
 
@@ -14,13 +13,12 @@ const persistence = createPersistedState({
   },
 })
 
-export default store(() => {
-  const Store = createStore({
-    modules: {
-      user,
-    },
-    strict: process.env.DEBUGGING,
-    plugins: [persistence],
-  })
-  return Store
+const Store = new Vuex.Store({
+  modules: {
+    user,
+  },
+  strict: process.env.DEBUGGING,
+  plugins: [persistence],
 })
+
+export default Store

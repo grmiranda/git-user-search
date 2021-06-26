@@ -9,9 +9,15 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import GitHubService from 'src/services/githubService'
 
-export default defineComponent({
+export default {
   name: 'PageIndex',
-})
+  async mounted() {
+    this.users = await GitHubService.getUsers('grmiranda')
+  },
+  data: () => ({
+    users: []
+  })
+}
 </script>

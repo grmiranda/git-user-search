@@ -2,39 +2,22 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
-          Quasar App
+          {{ $route.name }}
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <div v-if="!githubAccessToken" class="text-warning">Missing Access Token!</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-1"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-1">
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
+        <q-item-label header class="text-grey-8">
+          Olá,
         </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
+        <MenuLink
+          v-for="link in menuItems"
           :key="link.title"
           v-bind="link"
         />
@@ -48,72 +31,49 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
+import MenuLink from 'components/MenuLink.vue'
+import { mapGetters } from 'vuex'
 
-import { defineComponent, ref } from 'vue'
-
-const linksList = [
+const menuItemsList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
+    title: 'Authorization',
+    caption: 'GitHub Access Token',
+    icon: 'lock',
+    page: 'Authorization',
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
+    title: 'Search Users',
+    icon: 'search',
+    page: 'Search',
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
+    title: 'Favorites',
+    icon: 'star',
+    page: 'Favorites',
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
+    title: 'Users Map',
+    icon: 'map',
+    page: 'Map',
   },
 ]
 
-export default defineComponent({
+export default {
   name: 'MainLayout',
-
-  components: {
-    EssentialLink,
+  components: { MenuLink },
+  data: () => ({
+    menuItems: menuItemsList,
+    leftDrawerOpen: true,
+  }),
+  computed: {
+    ...mapGetters({
+      githubAccessToken: 'user/GET_USER_ACCESS_TOKEN'
+    })
   },
-
-  setup() {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-    }
-  },
-})
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+  }
+}
 </script>
