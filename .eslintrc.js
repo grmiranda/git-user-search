@@ -56,6 +56,7 @@ module.exports = {
     'linebreak-style': 'off',
     'no-underscore-dangle': 'off',
     camelcase: 'off',
+    'max-len': ["error", { "code": 150, "ignoreComments": true, "ignoreUrls": true }],
     'comma-dangle': ['error', 'only-multiline'],
     semi: ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],

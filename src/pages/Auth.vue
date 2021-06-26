@@ -8,7 +8,7 @@
         Creating a personal access token tutorial
       </a>
     </p>
-    <q-form :submit="saveAccessToken()">
+    <q-form @submit="saveAccessToken()">
       <q-input outlined v-model="accessToken" label="Access Token:" />
       <q-btn class="float-right q-mt-sm" color="primary" label="Save" type="submit"/>
     </q-form>
