@@ -10,7 +10,7 @@ Get Access Token to use GITHUB API:
     ✔ Add link to step-by-step tutorial @done(21-06-26 14:39)
     ✔ Save Access Token @done(21-06-26 14:33)
 Search Users:
-    ☐ Filter Search
+    ✔ Filter Search @done(21-06-26 17:09)
     ☐ List Results + Paginate
     ☐ Save User (Vuex)
         ☐ Block Duplicated Users
@@ -24,3 +24,4 @@ Map View:
 Adds:
     ☐ Handdle Bad Credentials
     ☐ Form Validation in Auth and Filters
+    ☐ Check search filter length < 256
