@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import MenuLink from 'components/MenuLink.vue'
+import MenuLink from 'src/components/atoms/MenuLink.vue'
 import { mapGetters } from 'vuex'
 
 const menuItemsList = [
@@ -50,11 +50,6 @@ const menuItemsList = [
     title: 'Favorites',
     icon: 'star',
     page: 'Favorites',
-  },
-  {
-    title: 'Users Map',
-    icon: 'map',
-    page: 'Map',
   },
 ]
 

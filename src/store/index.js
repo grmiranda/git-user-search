@@ -3,6 +3,7 @@ import createPersistedState from 'vuex-persistedstate'
 import { extend } from 'quasar'
 
 import user from './modules/user'
+import gitUsers from './modules/gitUsers'
 
 const persistence = createPersistedState({
   key: 'gitUserSerach@store',
@@ -16,6 +17,7 @@ const persistence = createPersistedState({
 const Store = new Vuex.Store({
   modules: {
     user,
+    gitUsers,
   },
   strict: process.env.DEBUGGING,
   plugins: [persistence],

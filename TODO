@@ -1,5 +1,4 @@
 --- PAGES / MODULES ---
-
 Dependencies:
     ✔ Vue Persisted State (save Vuex in LocalStorage) @done(21-06-26 12:45)
 Main Layout:
@@ -22,6 +21,7 @@ Search Users:
 Map View:
     ☐ Show Favorites Users in Map
 Adds:
+    ☐ Export VUEX User state to External file and let user import it
     ☐ Handdle Bad Credentials
     ☐ Form Validation in Auth and Filters
     ☐ Check search filter length < 256 (Github API limit)
